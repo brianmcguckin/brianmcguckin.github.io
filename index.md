@@ -8,8 +8,10 @@ The goal of this project was to predict house prices using the [Ames, Iowa Housi
 **Topics:** data preprocessing, visualization, feature engineering, machine learning, regression
 
 **Toolkit:** Python, Jupyter, NumPy, Pandas, Matplotlib, Seaborn, SciPy, SKLearn, XGBoost
-[Slides](https://github.com/brianmcguckin/thinkful_unit_03_capstone/blob/master/slides_housing_price_capstone.pdf)<br>
+
 [Notebook](https://github.com/brianmcguckin/thinkful_unit_03_capstone/blob/master/unit_03_capstone_final_notebook.ipynb)
-<br>
+
+[Slides](https://github.com/brianmcguckin/thinkful_unit_03_capstone/blob/master/slides_housing_price_capstone.pdf)
+
 ### Reuters-21578 Text Classification
 [Notebook](https://github.com/brianmcguckin/thinkful_unit_04_capstone/blob/master/04_capstone_unsupervised_learning_final.ipynb)
