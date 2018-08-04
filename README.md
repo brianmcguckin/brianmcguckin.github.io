@@ -1,1 +1,0 @@
-# brianmcguckin.github.io
