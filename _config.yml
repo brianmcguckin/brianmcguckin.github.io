@@ -1,4 +1,4 @@
 #html config settings
+theme: jekyll-theme-minimal
 title: [Brian McGuckin]
 description: [Data Science Portfolio]
-theme: jekyll-theme-minimal
