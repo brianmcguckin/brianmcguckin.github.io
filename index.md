@@ -1,5 +1,5 @@
 ---
 layout: default
 ---
-
-index test text
+# Home
+Brian McGuckin
