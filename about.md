@@ -5,4 +5,4 @@ permalink: /about/
 tagline: "Brian McGuckin: About"
 ---
 # Brian McGuckin
-About text here
+![brian](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/brian.png 'Brian McGuckin')
