@@ -10,10 +10,10 @@ tagline: "Brian McGuckin: Resume & Contact"
 
 <body>
 <a href="https://github.com/brianmcguckin">
-  <i class="fa fa-github" style="font-size:36px"></i>
+  <i class="fa fa-github" style="font-size:36px;color:black"></i>
 </a>
 
 <a href="https://www.linkedin.com/in/bmcguckin/">
-  <i class="fa fa-linkedin-square" style="font-size:36px;color:blue"></i>
+  <i class="fa fa-linkedin-square" style="font-size:36px;color:#0077B5"></i>
 </a>
 </body>
