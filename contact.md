@@ -4,9 +4,9 @@ title: "Resume & Contact"
 permalink: /contact/
 tagline: "Brian McGuckin: Resume & Contact"
 ---
-[LinkedIn](https://www.linkedin.com/in/bmcguckin/)
-[GitHub](https://github.com/brianmcguckin)
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
 <body>
 <a href="https://github.com/brianmcguckin">
