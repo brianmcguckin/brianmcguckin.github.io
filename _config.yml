@@ -1,4 +1,19 @@
+#title: Brian McGuckin
+#description: Data Scientist
+#logo: /images/brian.png
+#theme: jekyll-theme-minimal
+
+# Site settings
 title: Brian McGuckin
+email: bmcguckin87@gmail.com
 description: Data Scientist
-logo: /images/brian.png
-theme: jekyll-theme-minimal
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://bmcguckin.com" # the base hostname & protocol for your site
+#twitter_username:
+github_username: brianmcguckin
+paginate: 5
+theme-dark: false #Set to true to change to dark website theme
+
+plugins: [jekyll-paginate, kramdown]
+# Build settings
+markdown: kramdown
