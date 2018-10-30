@@ -5,6 +5,7 @@ permalink: /about/
 tagline: "Brian McGuckin: About"
 order: 2
 ---
-# About
-
+<head>
+<h1>About</h1>
+</head>
 <img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/brian.png" width="50%">
