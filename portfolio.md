@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Projects
-permalink: /projects/
+title: Brian McGuckin: Portfolio
+permalink: /portfolio/
 tagline: Data Science Portfolio
 ---
 # Projects
