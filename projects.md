@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Projects
+permalink: /projects/
+tagline: Data Science Portfolio
 ---
 # Projects
 **Ethereum Price Forecasting with Machine Learning**<br>
