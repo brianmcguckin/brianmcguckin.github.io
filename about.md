@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Brian McGuckin: About
+title: "About"
 permalink: /about/
-tagline: About
+tagline: "Brian McGuckin: About"
 ---
 # Brian McGuckin
 About text here

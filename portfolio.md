@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Brian McGuckin: Portfolio
+title: "Portfolio"
 permalink: /portfolio/
-tagline: Data Science Portfolio
+tagline: "Brian McGuckin: Data Science Portfolio"
 ---
 # Projects
 **Ethereum Price Forecasting with Machine Learning**<br>
