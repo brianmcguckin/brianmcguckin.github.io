@@ -8,19 +8,10 @@
 <div class="wrapper">
   <div class="trigger site-navigation">
     <a class="page-link" href="{{site.url}}{{site.baseurl}}">HOME</a>
-    <a class="page-link" href="https://bmcguckin.com/profile/">PORTFOLIO</a>
-    <a class="page-link" href="https://bmcguckin.com/about/">ABOUT</a>
-    <a class="page-link" href="https://bmcguckin.com/contact/">CONTACT</a>
-
 
     {% for sitePage in site.pages %}
     {% if sitePage.title %}
-    <!--
-    {% assign sorted_pages = site.pages | sort:"order" %}
-    {% for node in sorted_pages %}
-      <li><a href="{{node.url}}">{{node.title}}</a></li>
-    {% endfor %}
-    -->
+
     <span class="exclamationMark">/</span><a class="page-link" href="{{sitePage.url | prepend: site.baseurl }}">{{sitePage.title}}</a>
     {% endif %}
     {% endfor %}
