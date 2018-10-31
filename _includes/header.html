@@ -9,6 +9,7 @@
   <div class="trigger site-navigation">
     <a class="page-link" href="{{site.url}}{{site.baseurl}}">HOME</a>
 
+    {% assign pages = site.pages | sort:"order" %}
     {% for sitePage in site.pages %}
     {% if sitePage.title %}
 
