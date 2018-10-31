@@ -12,7 +12,7 @@ order: 3
 </head>
 
 <body>
-<a href="">
+<a href="https://angel.co/brianmcguckin">
   <i class="fa fa-angellist" style="font-size:36px;color:black"></i>
 </a>
 
