@@ -33,7 +33,7 @@ order: 1
 
 ![results table](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/house_price_results.png 'results table')
 
-[Notebook](https://github.com/brianmcguckin/thinkful_unit_03_capstone/blob/master/unit_03_capstone_final_notebook.ipynb), [Slides](https://github.com/brianmcguckin/thinkful_unit_03_capstone/blob/master/slides_housing_price_capstone.pdf)
+[Notebook](https://nbviewer.jupyter.org/github/brianmcguckin/thinkful_unit_03_capstone/blob/master/unit_03_capstone_final_notebook.ipynb), [Slides](https://github.com/brianmcguckin/thinkful_unit_03_capstone/blob/master/slides_housing_price_capstone.pdf)
 
 **Topics:** data preprocessing, visualization, feature engineering, machine learning, regression
 
@@ -52,7 +52,7 @@ NLP focused project tasked with utilizing unsupervised learning methods to class
 ![xgb results](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/nlp_xgb.png 'xgboost results')
 ![lr results](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/nlp_logregr.png 'logregr results')
 
-[Notebook](https://github.com/brianmcguckin/thinkful_unit_04_capstone/blob/master/04_capstone_unsupervised_learning_final.ipynb)
+[Notebook](https://nbviewer.jupyter.org/github/brianmcguckin/thinkful_unit_04_capstone/blob/master/04_capstone_unsupervised_learning_final.ipynb)
 
 **Topics:** text cleaning, tokenization, vectorization, dimensionality reduction, machine learning, clustering, classification
 
