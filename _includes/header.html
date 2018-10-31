@@ -9,12 +9,12 @@
   <div class="trigger site-navigation">
     <a class="page-link" href="{{site.url}}{{site.baseurl}}">HOME</a>
 
-    {% assign pages = site.pages | sort:"order" %}
     {% for sitePage in site.pages %}
     {% if sitePage.title %}
 
     <span class="exclamationMark">/</span><a class="page-link" href="{{sitePage.url | prepend: site.baseurl }}">{{sitePage.title}}</a>
     {% endif %}
+    {% assign pages = site.pages | sort:"order" %}
     {% endfor %}
   </div>
 </div>
