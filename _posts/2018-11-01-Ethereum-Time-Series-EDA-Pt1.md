@@ -4,7 +4,7 @@ title: "Ethereum Time Series EDA"
 date: 2018-11-01
 categories: ["data_science"]
 ---
-## Pt. 1: Introduction and Visualizing Time Series
+## Pt. 1: Introduction and Visualizing Time Series<br>
 The goal of this post (and subsequent posts) is to walk through an exploratory data analysis (EDA) I did for a time series analysis and forecasting project on the cryptocurrency component of Ethereum. Officially, the cryptocurrency is called Ether (ETH), but the term Ethereum is commonly used to refer to both the ETH currency and the larger Ethereum platform. As this project is only working with ETH data, you can safely assume that all mentions of Ethereum are in reference to the cryptocurrency.
 
 **The Ethereum Virtual Machine** is a distributed computing platform and operating system that utilizes self executing contracts called smart contracts. Smart contracts are hard coded with the terms of agreement, and allow for anonymous parties to transact with confidence and without the need for any government or other 3rd party involvement.
