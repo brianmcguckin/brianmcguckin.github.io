@@ -6,7 +6,7 @@ tagline: "Brian McGuckin: Data Science Portfolio"
 order: 1
 ---
 <h1>Projects</h1>
-<h2>
+<h2 id="eth_timeseries">
   <a href="https://github.com/brianmcguckin/thinkful_final_capstone">
     Ethereum Price Forecasting with Machine Learning
   </a>
@@ -23,7 +23,7 @@ order: 1
 
 **Toolkit:** Python, Jupyter, Numpy, Pandas, Matplotlib, Seaborn, SciPy, Ruptures, FBProphet, Sci-kit Learn, Statsmodels, Tensorflow, Keras, Hyperopt, Hyperas
 
-<h2>
+<h2 id="predicing_house_prices">
   <a href="https://github.com/brianmcguckin/thinkful_unit_03_capstone">
     Predicting Residential House Prices
   </a>
@@ -39,7 +39,7 @@ order: 1
 
 **Toolkit:** Python, Jupyter, NumPy, Pandas, Matplotlib, Seaborn, SciPy, SKLearn, XGBoost
 
-<h2>
+<h2 id="reuters_text_classification">
   <a href="https://github.com/brianmcguckin/thinkful_unit_04_capstone">
     Reuters-21578 Text Classification
   </a>
