@@ -9,6 +9,8 @@ order: 3
 <h1>Contact</h1>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+
 </head>
 
 <body>
