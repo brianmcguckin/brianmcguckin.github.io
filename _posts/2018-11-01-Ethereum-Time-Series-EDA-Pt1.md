@@ -2,7 +2,7 @@
 layout: post
 title: "Ethereum Time Series EDA"
 date: 2018-11-01
-categories: ["data science", "time series", "eda", "ethereum", "cryptocurrency"]
+categories: []
 ---
 ## Pt. 1: Introduction and Visualizing Time Series
 The goal of this post (and subsequent posts) is to walk through an exploratory data analysis (EDA) I did for a time series analysis and forecasting project on the cryptocurrency component of Ethereum. Officially, the cryptocurrency is called Ether (ETH), but the term Ethereum is commonly used to refer to both the ETH currency and the larger Ethereum platform. As this project is only working with ETH data, you can safely assume that all mentions of Ethereum are in reference to the cryptocurrency.
