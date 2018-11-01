@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Portfolio</title>
+  <meta name="description" content="Data Scientist">
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Source+Sans+Pro:400,700,200,300|Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://localhost:4000/portfolio/">
+  <link rel="alternate" type="application/rss+xml" title="Brian McGuckin" href="http://localhost:4000/feed.xml">
+</head>
+
+
+  <body class=" light  ">
+
+    
+<div class="wrapper">
+  <center> <a href="/index.html"><div class="site-title">   Brian McGuckin </div></a></center>
+</div>
+<div class="wrapper site-description">
+<center>  Data Scientist </center>
+</div>
+<div class="wrapper">
+  <div class="trigger site-navigation">
+    <a class="page-link" href="http://localhost:4000">HOME</a>
+
+    
+    
+      
+    
+      
+    
+      
+
+      <span class="exclamationMark">/</span><a class="page-link" href="/portfolio/">Portfolio</a>
+      
+    
+      
+
+      <span class="exclamationMark">/</span><a class="page-link" href="/about/">About</a>
+      
+    
+      
+
+      <span class="exclamationMark">/</span><a class="page-link" href="/contact/">Contact</a>
+      
+    
+  </div>
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <h1>Projects</h1>
+<h2 id="eth_timeseries">
+  <a href="https://github.com/brianmcguckin/thinkful_final_capstone">
+    Ethereum Price Forecasting with Machine Learning
+  </a>
+</h2>
+<p><strong>An Application of Time Series Regression Models and Neural Networks</strong></p>
+<ul>
+  <li>Ethereum price time series analysis, modeling and forecasting using ARIMA models &amp; LSTM RNNs, evaluated on RMSE and executed in Python. Performed changepoint analysis, set window size to median regime length, and differenced for stationarity. Forecasting method is one-step-ahead out of sample using a rolling window, and was done using ETH series only and then with Granger-causal exogenous drivers.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/exog_results.png" alt="exog_results" title="exog_results" /></p>
+
+<p><a href="https://nbviewer.jupyter.org/github/brianmcguckin/thinkful_final_capstone/blob/master/ethereum_price_forecasting_with_machine_learning.ipynb">Notebook</a>,
+<a href="https://github.com/brianmcguckin/thinkful_final_capstone/blob/master/ethereum_price_forecasting_with_machine_learning.pdf">Slides</a></p>
+
+<p><strong>Topics:</strong> Time Series, Forecasting, Cryptocurrency, ARIMA, LSTM, RNN, Structural Breaks, Stationarity, Exogenous drivers, Granger Causality</p>
+
+<p><strong>Toolkit:</strong> Python, Jupyter, Numpy, Pandas, Matplotlib, Seaborn, SciPy, Ruptures, FBProphet, Sci-kit Learn, Statsmodels, Tensorflow, Keras, Hyperopt, Hyperas</p>
+
+<h2 id="predicing_house_prices">
+  <a href="https://github.com/brianmcguckin/thinkful_unit_03_capstone">
+    Predicting Residential House Prices
+  </a>
+</h2>
+<p><strong>Regularized Linear Regression &amp; Tree Based Ensemble Modeling with Ordinal Variables</strong></p>
+<ul>
+  <li>Residential house price prediction using the <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data">Ames, Iowa Housing Market Dataset</a> with a focus on ordinal variable treatment. EDA, address outliers, missing values, feature engineering/variable transformation. Ordinal data was treated as (1) all categorical, (2) all continuous, (3) mix of categorical/continuous. Modeled using regularized linear regression (l1/l2/elastic net), random forests, and gradient boosted decision trees (xgboost algorithm). Results evaluated on RMSE (primary metric) and model runtime (secondary).</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/house_price_results.png" alt="results table" title="results table" /></p>
+
+<p><a href="https://nbviewer.jupyter.org/github/brianmcguckin/thinkful_unit_03_capstone/blob/master/unit_03_capstone_final_notebook.ipynb">Notebook</a>, <a href="https://github.com/brianmcguckin/thinkful_unit_03_capstone/blob/master/slides_housing_price_capstone.pdf">Slides</a></p>
+
+<p><strong>Topics:</strong> data preprocessing, visualization, feature engineering, machine learning, regression</p>
+
+<p><strong>Toolkit:</strong> Python, Jupyter, NumPy, Pandas, Matplotlib, Seaborn, SciPy, SKLearn, XGBoost</p>
+
+<h2 id="reuters_text_classification">
+  <a href="https://github.com/brianmcguckin/thinkful_unit_04_capstone">
+    Reuters-21578 Text Classification
+  </a>
+</h2>
+<p><strong>NLP using Unsupervised Learning Methods for Article Classification</strong>
+NLP focused project tasked with utilizing unsupervised learning methods to classify topics for articles in the <a href="https://archive.ics.uci.edu/ml/datasets/reuters-21578+text+categorization+collection">Reuters-21578 Dataset</a>. Articles loaded, cleaned, classes inspected. Created featuresets and vectorized text using tf-idf. Clustering algorithms (k-means, spectral, mean-shift, affinity propagation) categorized article topics with two forms of dimension reduction (LSA &amp; UMAP). Evaluated using ground truth clusters and ARI. Then used supervised classification algorithms (logistic regression, xgboost, KNN, random forest) and evaluated on cross-validated accuracy score.</p>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/nn_clusters.png" alt="nn_clusters" title="spectral clustering nearest neighbors" /></p>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/nlp_xgb.png" alt="xgb results" title="xgboost results" />
+<img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/nlp_logregr.png" alt="lr results" title="logregr results" /></p>
+
+<p><a href="https://nbviewer.jupyter.org/github/brianmcguckin/thinkful_unit_04_capstone/blob/master/04_capstone_unsupervised_learning_final.ipynb">Notebook</a></p>
+
+<p><strong>Topics:</strong> text cleaning, tokenization, vectorization, dimensionality reduction, machine learning, clustering, classification</p>
+
+<p><strong>Toolkit:</strong> Python, NumPy, Pandas, Matplotlib, Seaborn, NLTK, SciPy, SKLearn, XGBoost, RegEx, UMAP</p>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading small-site-title">Brian McGuckin</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list footer-content">
+          <li>Powered By <a href="http://github.com/hemangsk/Gravity">Gravity</a></li>
+          <li>Made with <i class="fa fa-heart"></i> on <a href="http://jekyllrb.com"><span>{ { Jekyll } }</a></span></li>
+
+
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2 footer-content">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3 site-description">
+        <p>Data Scientist</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
