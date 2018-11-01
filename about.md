@@ -8,4 +8,6 @@ order: 2
 <head>
 <h1>About</h1>
 </head>
-<img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/brian.png" width="50%">
+<body>
+<img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/brian.png" width="30%">
+</body>
