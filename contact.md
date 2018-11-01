@@ -20,10 +20,10 @@ order: 3
 </a>
 
 <a href="https://angel.co/brianmcguckin">
-  <i class="fab fa-angellist" style="font-size:36px;></i>
+  <i class="fab fa-angellist" style="font-size:36px;color:black></i>
 </a>
 
 <a href="mailto:bmcguckin87@gmail.com">
-  <i class="fas fa-envelope" style='font-size:36px;'></i>
+  <i class="fas fa-envelope" style='font-size:36px;color:#dd4b39'></i>
 </a>
 </body>
