@@ -12,15 +12,19 @@ order: 3
 </head>
 
 <body>
-<a href="https://angel.co/brianmcguckin">
-  <i class="fa fa-angellist" style="font-size:36px;color:black"></i>
-</a>
-
 <a href="https://github.com/brianmcguckin">
   <i class="fa fa-github" style="font-size:36px;color:black"></i>
 </a>
 
 <a href="https://www.linkedin.com/in/bmcguckin/">
   <i class="fa fa-linkedin-square" style="font-size:36px;color:#0077B5"></i>
+</a>
+
+<a href="https://angel.co/brianmcguckin">
+  <i class="fa fa-angellist" style="font-size:36px;"></i>
+</a>
+
+<a href="mailto:bmcguckin87@gmail.com">
+  <i class="fas fa-envelope" style='font-size:36px;'></i>
 </a>
 </body>
