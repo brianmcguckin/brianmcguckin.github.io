@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ethereum Time Series EDA Pt. 1"
+title: "Ethereum Time Series EDA"
 date: 2018-11-01
 categories: ["data science", "time series", "eda", "ethereum", "cryptocurrency"]
 ---
