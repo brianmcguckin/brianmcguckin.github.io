@@ -6,7 +6,6 @@ tagline: "Brian McGuckin: About"
 order: 2
 ---
 <head>
-<link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/favicon.png"/>
 <h1>About</h1>
 </head>
 <body>
