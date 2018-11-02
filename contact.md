@@ -6,6 +6,7 @@ tagline: "Brian McGuckin: Contact"
 order: 3
 ---
 <head>
+<link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/favicon.png"/>
 <h1>Contact</h1>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
 </head>

@@ -5,6 +5,10 @@ permalink: /portfolio/
 tagline: "Brian McGuckin: Data Science Portfolio"
 order: 1
 ---
+<head>
+<link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/favicon.png"/>
+</head>
+
 <h1>Projects</h1>
 <h2 id="eth_timeseries">
   <a href="https://github.com/brianmcguckin/thinkful_final_capstone">
