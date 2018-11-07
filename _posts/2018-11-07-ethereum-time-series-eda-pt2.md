@@ -3,7 +3,7 @@ layout: post
 title: "Ethereum Time Series EDA Pt. 2"
 date: 2018-11-07
 categories: ["data_science"]
-feature-img: "![ts_stationarity](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ts_stationarity.png 'ts_stationarity')"
+feature-img: "https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ts_stationarity.png"
 ---
 ## Stochastic Processes and Stationarity<br>
 (For context, please consider reading [Part 1](https://bmcguckin.com/data_science/2018/11/01/Ethereum-Time-Series-EDA-Pt1.html) of this analysis)
