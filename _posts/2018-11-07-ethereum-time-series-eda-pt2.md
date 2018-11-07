@@ -21,7 +21,7 @@ While obvious here, it is a good practice to follow up conclusions made from vis
 ### Stabilizing ETH time series with differencing
 As stationarity is a common assumption underlying many time series analysis and modeling techniques, it is necessary to stabilize the data to achieve a stationary series. Differencing is an extremely common technique, and just involves computing the differences between observations. First degree differencing is the difference between consecutive values, and while often sufficient to stabilize data (as is the case here), it may be necessary to take the difference more than once or employ other techniques (such as square root, log, or log differencing). Here are the results of first degree differencing:
 
-![ts_diff](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ts_diff.png 'ts_diff')
+![ts_diff](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ts_diff.png 'ts_diff1')
 
 ![ts_stationarity](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ts_stationarity.png 'ts_stationarity')
 
