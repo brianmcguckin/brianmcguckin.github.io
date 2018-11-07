@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ethereum Time Series EDA</title>
+  <meta name="description" content="(For context, please consider reading Part 1 of this analysis)Pt. 2: Stochastic Processes and StationarityA stochastic process is defined as a sequence of ra...">
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Source+Sans+Pro:400,700,200,300|Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://localhost:4000/data_science/2018/11/07/ethereum-time-series-eda-pt2.html">
+  <link rel="alternate" type="application/rss+xml" title="Brian McGuckin" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/favicon.png"/>
+</head>
+
+
+  <body class=" light  ">
+
+    
+<div class="wrapper">
+  <center> <a href="/index.html"><div class="site-title">   Brian McGuckin </div></a></center>
+</div>
+<div class="wrapper site-description">
+<center>  Data Scientist </center>
+</div>
+<div class="wrapper">
+  <div class="trigger site-navigation">
+    <a class="page-link" href="http://localhost:4000">HOME</a>
+
+    
+    
+      
+    
+      
+    
+      
+
+      <span class="exclamationMark">/</span><a class="page-link" href="/portfolio/">Portfolio</a>
+      
+    
+      
+
+      <span class="exclamationMark">/</span><a class="page-link" href="/about/">About</a>
+      
+    
+      
+
+      <span class="exclamationMark">/</span><a class="page-link" href="/contact/">Contact</a>
+      
+    
+  </div>
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline"><a class="post-title-link"  href="/data_science/2018/11/07/ethereum-time-series-eda-pt2.html">Ethereum Time Series EDA</a></h2>
+  <center>  <p class="post-meta"><time datetime="2018-11-07T00:00:00-06:00" itemprop="datePublished">Nov 7, 2018</time></p>
+    
+   </center>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>(For context, please consider reading <a href="https://bmcguckin.com/data_science/2018/11/01/Ethereum-Time-Series-EDA-Pt1.html">Part 1</a> of this analysis)</p>
+<h2 id="pt-2-stochastic-processes-and-stationarity">Pt. 2: Stochastic Processes and Stationarity<br /></h2>
+<p>A <strong>stochastic process</strong> is defined as a sequence of random variables understood to have happened over a course of time. At each new unit of time, variables can assume one of many possible values, each having a probability associated with it. While we don’t know the exact value a variable will take, we can make inferences based on these probabilities.</p>
+
+<p>Formally, a <strong>stationary process</strong> is a stochastic process for which a shift in time does not cause a change in its joint probability distribution. This basically means that for a variable <em>x</em> observed at time <em>t</em>, the range (or set) of values <em>x</em> can take, as well as the probabilities associated with taking these values, is the same for all observations of <em>t</em>. Consequently, properties of the distribution (such as mean and variance) are constant - a stationary process is one that does not evolve statistically. This is known as <strong>strong stationarity</strong>, and is often too strict a definition to follow when modeling real-life data. In practice, it is common to employ time series analysis techniques on processes with weak stationarity (also known as covariance or second order stationarity). <strong>Weak stationarity</strong> only requires that the process mean and autocovariance remain constant with respect to time (<em>t</em>). When using the term stationarity in the context of this time series analysis, I am refering to weak stationarity.</p>
+
+<h3 id="eth-time-series-stationarity">ETH time series stationarity</h3>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/eth_ts.png" alt="eth_ts" title="eth_ts" /></p>
+
+<p>Looking at the ETH time series, it is clear that the mean close price near the beginning of the series will be much lower than at later points in time, particularly after around May 2017. This is to say, the series displays <strong>trend</strong> (or drift), which simply means that the data moves in a certain direction over time. More accurately, this series displays multiple trends, as there are periods of time where close price is trending upwards and others where it is trending downwards.</p>
+
+<p>While obvious here, it is a good practice to follow up conclusions made from visual inspection with a formal test where applicable. Here, I am using the <strong>Augmented Dickey-Fuller (ADF) test</strong>, which is a null hypothesis significance test (NHST) for which the null hypothesis is that the time series has a unit root (trend), and the alternative hypothesis is that the series is stationary. The results shown here are the test statistic, p-value, and critical values from the output of the <a href="https://www.statsmodels.org/dev/generated/statsmodels.tsa.stattools.adfuller.html">Statsmodels ADF test</a> implementation in Python. Interpreting ADF results is simple: for significant values of <em>p</em>, the more negative the <em>adf</em> statistic, the stronger the rejection of the null hypothesis that a unit root is present. Statsmodels also outputs the critical values for the <em>adf</em> statistic at 1%, 5%, and 10% intervals. Simply put, <strong>critical values</strong> are points used to compare the test statistic with in order to determine whether to reject the null hypothesis or not. Here we don’t need to go beyond the <em>p-value</em>, as for a significance of <em>p = 0.05</em>, the value of <em>p = 0.366</em> means we cannot reject the null hypothesis that there is a unit root present. As suspected, the series is not stationary.</p>
+
+<h3 id="stabilizing-eth-time-series-with-differencing">Stabilizing ETH time series with differencing</h3>
+<p>As stationarity is a common assumption underlying many time series analysis and modeling techniques, it is necessary to stabilize the data to achieve a stationary series. Differencing is an extremely common technique, and just involves computing the differences between observations. First degree differencing is the difference between consecutive values, and while often sufficient to stabilize data (as is the case here), it may be necessary to take the difference more than once or employ other techniques (such as square root, log, or log differencing). Here are the results of first degree differencing:</p>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ts_diff.png" alt="ts_diff" title="ts_diff" /></p>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ts_stationarity.png" alt="ts_stationarity" title="ts_stationarity" /></p>
+
+<p>Interpreting these ADF test results for price, and keeping in mind a significance threshold of <em>p = 0.05</em>, the <em>p-value</em> of 0.0037 means we can compare <em>adf = -3.7284</em> to the critical values. Since 3.7284 is less than the 1% critical value -3.4424, we reject the null hypothesis that a unit root is present and have a stationary process to work with.</p>
+
+<h3 id="what-is-this-rolling-mean-business">What is this rolling mean business?</h3>
+
+<p>This visualization also includes a plot and ADF test for a 40 day rolling mean. The rolling mean is simply the mean of a moving 40 day window throughout the series, i.e. starting at index 0, it is the mean for observations 0 to 40, 1 to 41, 2 to 42, and so on until the end of the series. Why this is included (and why I am taking 40 observations at a time) will be covered in part 3 of this analysis, which will discuss structural breaks, change point detection, and rolling window forecasting.</p>
+
+  </div>
+
+  <footer class="postNavigation">
+  
+    <a class="postPrev" href="/data_science/2018/11/01/ethereum-time-series-eda-pt1.html">
+        &laquo; Ethereum Time Series EDA
+    </a>
+  
+  
+  </footer>
+
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading small-site-title">Brian McGuckin</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list footer-content">
+          <li>Powered By <a href="http://github.com/hemangsk/Gravity">Gravity</a></li>
+          <li>Made with <i class="fa fa-heart"></i> on <a href="http://jekyllrb.com"><span>{ { Jekyll } }</a></span></li>
+
+
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2 footer-content">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3 site-description">
+        <p>Data Scientist</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
