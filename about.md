@@ -6,9 +6,10 @@ tagline: "Brian McGuckin: About & Contact"
 order: 2
 ---
 <head>
-<h1>About & Contact</h1>
+<h1 style="text-align:center">About & Contact</h1>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
 </head>
+
 <body>
 <img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/brian.png" width="30%" align="middle"><br>
 <a href="https://github.com/brianmcguckin">
