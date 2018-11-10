@@ -23,6 +23,7 @@ In 2018, I enrolled in and graduated from <a href="https://www.thinkful.com/boot
 <br>
 When I'm not immersed in data, you'll probably find me enjoying live music, investigating a new pizza or taco spot, or watching baseball and Formula 1 racing.<br>
 <br>
+<p align="center">
 <a href="https://github.com/brianmcguckin">
   <i class="fab fa-github" style="font-size:36px;color:black"></i>
 </a>
@@ -38,5 +39,6 @@ When I'm not immersed in data, you'll probably find me enjoying live music, inve
 <a href="mailto:bmcguckin87@gmail.com">
   <i class="fas fa-envelope" style="font-size:36px;color:#dd4b39"></i>
 </a>
+</p>
 <br>
 </body>
