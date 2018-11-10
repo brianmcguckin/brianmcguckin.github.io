@@ -5,7 +5,7 @@ permalink: /portfolio/
 tagline: "Brian McGuckin: Data Science Portfolio"
 order: 1
 ---
-<h1>Projects</h1>
+<h1 style="text-align:center">Projects</h1>
 <h2 id="eth_timeseries">
   <a href="https://github.com/brianmcguckin/thinkful_final_capstone">
     Ethereum Price Forecasting with Machine Learning
