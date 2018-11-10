@@ -5,6 +5,7 @@ permalink: /about/
 tagline: "Brian McGuckin: About & Contact"
 order: 2
 ---
+<br>
 <head>
 <h1 style="text-align:center">About & Contact</h1>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
