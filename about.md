@@ -11,7 +11,7 @@ order: 2
 </head>
 
 <body>
-<img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/brian.png" width="30%" style="float:middle"><br>
+<img align="center" src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/brian.png" width="30%"><br>
 <br>
 I am a data scientist currently open to opportunities based in the Chicago area or remote. In 2009 I received a bachelor's degree in Economics from the University of Arizona, with a minor in Business Administration. After several years working in operations & project management, I found myself intrigued by insights extracted through data science and the power that machine learning provides in making data informed decisions.<br>
 <br>
