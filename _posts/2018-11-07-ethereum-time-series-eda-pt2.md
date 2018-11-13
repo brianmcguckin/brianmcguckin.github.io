@@ -5,7 +5,8 @@ date: 2018-11-07
 categories: ["data_science"]
 feature-img: "images/ts_stationarity.png"
 ---
-## Ethereum Time Series EDA Pt. 2<br>
+<h2 style="text-align:center">Ethereum Time Series EDA Pt. 2</h2>
+<br>
 (For context, please consider reading [Part 1](https://bmcguckin.com/data_science/2018/11/01/Ethereum-Time-Series-EDA-Pt1.html) of this analysis)
 
 A **stochastic process** is defined as a sequence of random variables understood to have happened over a course of time. At each new unit of time, variables can assume one of many possible values, each having a probability associated with it. While we don't know the exact value a variable will take, we can make inferences based on these probabilities.
