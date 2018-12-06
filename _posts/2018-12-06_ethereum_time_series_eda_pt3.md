@@ -15,16 +15,16 @@ When considering the end goal of predicting the time series' future movements, i
 A **structural break** (sometimes called regime shift or change) is a sudden, unexpected shift in a time series' behavior. Recall that a stochastic process is a sequence of random variables drawn from the same probability distribution. In statistical terms, a structural break occurs when a time series' underlying probability distribution changes. **Change point detection** (or analysis) process which aims to identify when these changes or shifts happened, often by using an algorithm to compare statistical properties of the original and new distributions. While there are many approaches to change point detection, the two utilized in this analysis are given a quick look next.
 
 **Pruned Exact Linear Time (PELT)**<br>
-<a href="https://arxiv.org/pdf/1101.1438.pdf">Introduced in 2012</a>, PELT is a change point detection algorithm that works by minimizing a cost function over pruned segments of data. Segments are defined to start at *t* and end at *T*, and the changepoint in question is denoted *s*, such that *t < s < T*. The algorithm minimizes the summed cost of segments [*t, s*] and [*s, T*] with respect to the cost of the full segment [*t, T*].
+<a href="https://arxiv.org/pdf/1101.1438.pdf">Introduced in 2012</a>, PELT is a change point detection algorithm that works by minimizing a cost function over pruned segments of data. Segments are defined to start at *t* and end at *T*, and the change point in question is denoted *s*, such that *t < s < T*. The algorithm minimizes the summed cost of segments [*t, s*] and [*s, T*] with respect to the cost of the full segment [*t, T*].
 
 ![pelt](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/pelt.png 'pelt')
 
 **Prophet**<br>
-<a href="https://research.fb.com/prophet-forecasting-at-scale/">Prophet</a> is an open source additive regression algorithm developed at Facebook. While best applied to data with seasonality (which is not a component here), I decided to use it's built in changepoint detection to compare with changepoints detected by PELT.
+<a href="https://research.fb.com/prophet-forecasting-at-scale/">Prophet</a> is an open source additive regression algorithm developed at Facebook. While best applied to data with seasonality (which is not a component here), I decided to use it's built in change point detection to compare with change points detected by PELT.
 
 ![prophet](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/prophet.png 'prophet')
 
-As evident by the charted changepoints detected by each algorithm, PELT's segmenting method ignores the beginning of the series, which Prophet detects. However, Prophet also contains a way to determine the magnitude of the changepoint, and after extracting Prophet's significant changepoints (determined to be those with a greater magnitude than the mean of all changepoint magnitudes) and combining them with PELT's changepoints, the following visual represents the final changepoints used for the rest of the analysis.
+As evident by the charted change points detected by each algorithm, PELT's segmenting method ignores the beginning of the series, which Prophet detects. However, Prophet also contains a way to determine the magnitude of the change point, and after extracting Prophet's significant change points (determined to be those with a greater magnitude than the mean of all change point magnitudes) and combining them with PELT's change points, the following visual represents the final change points used for the rest of the analysis.
 
 ![strucbreaks](https://raw.githubusercontent.com/bbrianmcguckin/brianmcguckin.github.io/master/images/strucbreaks.png 'strucbreaks')
 
