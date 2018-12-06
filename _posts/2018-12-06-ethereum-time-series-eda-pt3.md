@@ -26,7 +26,7 @@ A **structural break** (sometimes called regime shift or change) is a sudden, un
 
 As evident by the charted change points detected by each algorithm, PELT's segmenting method ignores the beginning of the series, which Prophet detects. However, Prophet also contains a way to determine the magnitude of the change point, and after extracting Prophet's significant change points (determined to be those with a greater magnitude than the mean of all change point magnitudes) and combining them with PELT's change points, the following visual represents the final change points used for the rest of the analysis.
 
-![strucbreaks](https://raw.githubusercontent.com/bbrianmcguckin/brianmcguckin.github.io/master/images/strucbreaks.png 'strucbreaks')
+![strucbreaks](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/strucbreaks.png 'strucbreaks')
 
 ### Recursive vs. rolling forecasts
 Out-of-sample forecasts are typically done using either a recursive or a rolling forecast. Letting *h* denote the number of forecasts (or steps), a **recursive (expanding window) forecast** is done by fitting the model to the training data and producing *h* forecasts using test data. The training sample is then increased by one observation, the model is re-trained, and *h* forecasts are again produced.
