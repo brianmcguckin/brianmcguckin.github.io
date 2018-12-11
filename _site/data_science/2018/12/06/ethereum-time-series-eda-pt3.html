@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Time Series Forecasting and Structural Breaks</title>
+  <meta name="description" content="Ethereum Time Series EDA Pt. 3In-sample vs. out-of-sample forecastingIn time series, in-sample and out-of-sample forecasts are most easily explained in terms...">
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Source+Sans+Pro:400,700,200,300|Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://localhost:4000/data_science/2018/12/06/ethereum-time-series-eda-pt3.html">
+  <link rel="alternate" type="application/rss+xml" title="Brian McGuckin" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/favicon.png"/>
+
+  
+      <meta property="og:image" content="http://localhost:4000/images/strucbreaks.png" />
+  
+
+</head>
+
+
+  <body class=" light  ">
+
+    
+<div class="wrapper">
+  <center> <a href="/index.html"><div class="site-title">   Brian McGuckin </div></a></center>
+</div>
+<div class="wrapper site-description">
+<center>  Data Scientist </center>
+</div>
+<div class="wrapper">
+  <div class="trigger site-navigation" style="text-align:center">
+    <a class="page-link" href="http://localhost:4000" style="font-weight:bold">HOME</a>
+
+    
+    
+      
+    
+      
+    
+      
+
+      <span class="exclamationMark">/</span><a class="page-link" href="/portfolio/" style="font-weight:bold">Portfolio</a>
+      
+    
+      
+
+      <span class="exclamationMark">/</span><a class="page-link" href="/about/" style="font-weight:bold">About & Contact</a>
+      
+    
+  </div>
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline"><a class="post-title-link"  href="/data_science/2018/12/06/ethereum-time-series-eda-pt3.html">Time Series Forecasting and Structural Breaks</a></h2>
+  <center>  <p class="post-meta"><time datetime="2018-12-06T00:00:00-06:00" itemprop="datePublished">Dec 6, 2018</time></p>
+    
+   </center>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 style="text-align:center">Ethereum Time Series EDA Pt. 3</h2>
+<h3 id="in-sample-vs-out-of-sample-forecasting">In-sample vs. out-of-sample forecasting</h3>
+<p>In time series, in-sample and out-of-sample forecasts are most easily explained in terms of train and validation/test sets. The approach is a familiar one - a model is fitted using a train set, then the model makes forecasts using test set feature data. A model is forecasting <strong>in-sample</strong> if it was fitted on the observation it is forecasting (i.e. included in the train set). <strong>Out-of-sample (OOS)</strong> forecasts are those made for observations that the model has never seen before (those contained in the test set).</p>
+
+<p>When considering the end goal of predicting the time series’ future movements, it follows that a model’s out-of-sample forecasting error is the true measure of its predictive power. Of course, in-sample error remains important, as time series models can overfit just like any other.</p>
+
+<h3 id="structural-breaks-and-change-point-detection">Structural breaks and change point detection</h3>
+<p>A <strong>structural break</strong> (sometimes called regime shift or change) is a sudden, unexpected shift in a time series’ behavior. Recall that a stochastic process is a sequence of random variables drawn from the same probability distribution. In statistical terms, a structural break occurs when a time series’ underlying probability distribution changes. <strong>Change point detection</strong> (or analysis) process which aims to identify when these changes or shifts happened, often by using an algorithm to compare statistical properties of the original and new distributions. While there are many approaches to change point detection, the two utilized in this analysis are given a quick look next.</p>
+
+<p><strong>Pruned Exact Linear Time (PELT)</strong><br />
+<a href="https://arxiv.org/pdf/1101.1438.pdf">Introduced in 2012</a>, PELT is a change point detection algorithm that works by minimizing a cost function over pruned segments of data. Segments are defined to start at <em>t</em> and end at <em>T</em>, and the change point in question is denoted <em>s</em>, such that <em>t &lt; s &lt; T</em>. The algorithm minimizes the summed cost of segments [<em>t, s</em>] and [<em>s, T</em>] with respect to the cost of the full segment [<em>t, T</em>].</p>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/pelt.png" alt="pelt" title="pelt" /></p>
+
+<p><strong>Prophet</strong><br />
+<a href="https://research.fb.com/prophet-forecasting-at-scale/">Prophet</a> is an open source additive regression algorithm developed at Facebook. While best applied to data with seasonality (which is not a component here), I decided to use it’s built in change point detection to compare with change points detected by PELT.</p>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/prophet.png" alt="prophet" title="prophet" /></p>
+
+<p>As evident by the charted change points detected by each algorithm, PELT’s segmenting method ignores the beginning of the series, which Prophet detects. However, Prophet also contains a way to determine the magnitude of the change point, and after extracting Prophet’s significant change points (determined to be those with a greater magnitude than the mean of all change point magnitudes) and combining them with PELT’s change points, the following visual represents the final change points used for the rest of the analysis.</p>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/strucbreaks.png" alt="strucbreaks" title="strucbreaks" /></p>
+
+<h3 id="recursive-vs-rolling-forecasts">Recursive vs. rolling forecasts</h3>
+<p>Out-of-sample forecasts are typically done using either a recursive or a rolling forecast. Letting <em>h</em> denote the number of forecasts (or steps), a <strong>recursive (expanding window) forecast</strong> is done by fitting the model to the training data and producing <em>h</em> forecasts using test data. The training sample is then increased by one observation, the model is re-trained, and <em>h</em> forecasts are again produced.</p>
+
+<p>Similarly, <strong>rolling (moving window) forecasts</strong> are performed by training the model and making <em>h</em> forecasts. However, the train set for the next iteration remains constant in size, but is moved ahead one time period. Where the expanding window retains the series history, the rolling window ‘forgets’ the oldest observation at each iteration.</p>
+
+<p>At first, it may seem suboptimal to not train a predictive algorithm on all available data, but rolling forecasts offer a few distinct advantages over recursive ones. Thus, choosing a forecasting method requires consideration for the characteristics of the series that is being forecasted, as well as characteristics of the algorithms which will be producing the forecasts. While not an exhaustive list, the factors I assigned the most weight in choosing the method in this analysis are:</p>
+<ul>
+  <li>Series length: the longer the series, the larger the train set will eventually become. This can result in significant computational costs when refitting to each train set, especially when using neural networks (which I use later in this project). Conversely, a rolling forecast results in relatively stable training times.</li>
+  <li>Structural breaks: since a recursive forecast contains all past data, it is vulnerable to shifts in a series’ structure, whereas the rolling method’s “forgetfulness” offers some protection against these regime changes.</li>
+</ul>
+
+<h3 id="window-size">Window size</h3>
+<p>When using a rolling forecast, it is up to the user to choose the size (or length) of the window. A shorter window results in a smaller dataset for models to train with, risking suboptimal parameter estimation. However, a larger window may be long enough that it includes data from a previous regime. Recall that a shift in regime means that the underlying distribution has changed, and the process generating the data for a previous regime is no longer indicative of the current process. Thus, the larger window introduces the risk that the overall model itself may not capable of explaining variance for all included observations.</p>
+
+<p>Thus, given the volatile nature of ETH price movements and multiple regime changes, I decided to use the median regime length as the window size. The intuition behind this choice was an attempt to maximize the data models trained on, while minimizing the amount of regime changes that a single training set would contain while iterating throughout the entire time series.</p>
+
+<p>To back this up, I ran a window sized (40 observations) rolling mean ADF test to check that the series was stationary within this window size. As indicated below, the series is more stable within a 40 day interval than as a whole.</p>
+
+<p><img src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ts_stationarity.png" alt="ts_stationarity" title="ts_stationarity" /></p>
+
+<p>In the next post, I will introduce Auto Regressive Integrated Moving Average (ARIMA) modeling and discuss how it performed on this Ethereum time series.</p>
+
+  </div>
+
+  <footer class="postNavigation">
+  
+    <a class="postPrev" href="/data_science/2018/11/07/ethereum-time-series-eda-pt2.html">
+        &laquo; Stochastic Processes and Stationarity
+    </a>
+  
+  
+  </footer>
+
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading small-site-title">Brian McGuckin</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list footer-content">
+          <li>Powered By <a href="http://github.com/hemangsk/Gravity">Gravity</a></li>
+          <li>Made with <i class="fa fa-heart"></i> on <a href="http://jekyllrb.com"><span>{ { Jekyll } }</a></span></li>
+
+
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2 footer-content">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3 site-description">
+        <p>Data Scientist</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
