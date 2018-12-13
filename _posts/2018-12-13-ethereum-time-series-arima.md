@@ -13,14 +13,14 @@ ARMA and ARIMA models are best understood as combinations of their two core comp
  **Autoregressive models** represent time-varying processes by calculating values for the target variable as linearly dependent on their own previous values, as well as a random noise term (often called a stochastic term). Autoregressive models use the notation AR(*p*), where *p* is the order (or number of autoregressive terms included). The AR term is thus written as:
 
  <p align="center">
- <img style="align:center" src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ar_term.gif" width="40%">
+ <img style="align:center" src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ar_term.gif">
  </p>
 
 Where *c* is a constant, ![varphi_i](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/varphi_i.gif 'varphi_i') are the parameters, and ![epsilon_t](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/epsilon_t.gif 'epsilon_t') is the noise term.
 
 **Moving-average** models essentially represent the error term as linearly dependent on its current and past values. Notated as MA(*q*) where *q* is the order (or number previous error terms included), the MA term is written:
 <p align="center">
-<img style="align:center" src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ma_term.gif" width="40%">
+<img style="align:center" src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/ma_term.gif">
 </p>
 
 Where ![mu](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/mu.gif 'mu') is the expectation of ![X_t](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/x_t.gif 'X_t'), ![epsilon_t](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/epsilon_t.gif 'epsilon_t') is the noise term, and ![theta_i](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/theta_i.gif 'theta_i') are the parameters.
@@ -28,7 +28,7 @@ Where ![mu](https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github
 ### Time Series Regression: ARMA and ARIMA Models
 **ARMA (AutoRegressive Moving Average) models** combine autoregressive and moving-average models into a single model. Given the above definitions of AR and MA polynomials, the ARMA model notated ARMA(*p,q*) is written:
 <p align="center">
-<img style="align:center" src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/arma.gif" width="60%">
+<img style="align:center" src="https://raw.githubusercontent.com/brianmcguckin/brianmcguckin.github.io/master/images/arma.gif">
 </p>
 
 To model a stationary stochastic process, an ARMA model uses the AR component to model the target variable, and the MA component to model the error. But as discussed in previous posts, not all stochastic processes are stationary. For these cases we have the **ARIMA (AutoRegressive Integrated Moving Average) model**, which is essentially an ARMA model with a built in differencing step for non-stationary processes. This differencing step is represented by the "integrated" part of the model, the order of which is assigned to *d*. Thus, if ARMA order is notated ARMA(*p,q*), it follows that ARIMA order is notated ARIMA(*p,d,q*). Functionally, the "integrated" aspect of the ARIMA model replaces values with those that have been differenced with *d* previous values.
