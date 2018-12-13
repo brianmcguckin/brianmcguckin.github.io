@@ -6,7 +6,7 @@ categories: ["data_science"]
 feature-img: "images/arma.gif"
 ---
 <h2 style="text-align:center">ARMA and ARIMA: Preliminaries and Setup</h2>
-<body>
+
 ### AR and MA Models
 ARMA and ARIMA models are best understood as combinations of their two core components: autoregressive (AR) and moving-average (MA) models.
 
